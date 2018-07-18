@@ -12,4 +12,4 @@ Example:
 input : {1, 3, 5, 4, 8, 10}
 output: {1, 5, 3, 8, 4, 10}
 
-here index 1, 3, 5, and so on are larger than it's left and right both.
+here index 1, 3, 5, and so on are larger than it's left and right both......
