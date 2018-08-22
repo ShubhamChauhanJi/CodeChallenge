@@ -4,12 +4,12 @@
 #include<stdlib.h>
 int main()
 {
-	int i,size,temp,j;
+	int i,size,temp,j,left,right;
 	printf("enter size of array:");
 	scanf("%d",&size);
 	int a[size];
 	printf("enter 1's and 0's only\n");
-	for(i=0;i<=size;i++)
+	for(i=0;i<size;i++)	
 	{
 		scanf("%d",&a[i]);
 		if(!(a[i]==0 || a[i]==1))
@@ -19,22 +19,35 @@ int main()
 			
 		}
 	}
-	for(i=0;i<size;i++)
+	left=0;
+	right=size-1;
+	while(left<right)
 	{
-		for(j=i+1;j<size;j++)
+		while(a[left]==0 && left<right)
 		{
-		
-		if(a[i]>a[j])
+			left++;
+		}
+		while(a[right]==1 && left<right)
 		{
-			temp=a[i];
-			a[i]=a[j];
-			a[j]=temp;
+			right--;
+		}
+		if(left<right)
+		{
+		 	a[left]=0;
+		 	a[right]=1;
+		 	left++;
+		 	right--;
+		 	
 		}
 	}
+	for(i=0;i<size;i++)			
+	{
+		printf("%d",a[i]);
+	}
+	printf("\n");
+	return 0;
 }
-for(i=0;i<size;i++)
-{
-	printf("%d\n",a[i]);
-}
-return 0;
-}
+	
+	
+	
+
